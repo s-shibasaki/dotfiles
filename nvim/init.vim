@@ -11,7 +11,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 "Plug 'airblade/vim-gitgutter'
 "Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
-"Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter'
 "Plug 'prettier/vim-prettier', { 'do': 'yarn install' }"
 "Plug 'christoomey/vim-tmux-navigator'
 "Plug 'sheerun/vim-polyglot'
@@ -68,8 +68,11 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 " Close the tab if NERDTree is the only window remaining in it.
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
-"vmap ++ <plug>NERDCommenterToggle
-"nmap ++ <plug>NERDCommenterToggle
+vmap ++ <plug>NERDCommenterToggle
+nmap ++ <plug>NERDCommenterToggle
+
+" Highlight currently open buffer in NERDTree
+"autocmd BufEnter * call SyncTree()
 
 "let g:NERDTreeGitStatusWithFlags = 1
 "let g:WebDevIconsUnicodeDecorateFolderNodes = 1
@@ -121,9 +124,6 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 "    wincmd p
 "  endif
 "endfunction
-
-" Highlight currently open buffer in NERDTree
-"autocmd BufEnter * call SyncTree()
 
 " coc config
 "let g:coc_global_extensions = [
