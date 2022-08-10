@@ -3,6 +3,8 @@ set -x https_proxy $http_proxy
 
 set -g EDITOR nvim
 
+fish_add_path ~/.cargo/bin
+
 set -g fish_prompt_pwd_dir_length 0
 set -g theme_powerline_fonts yes
 set -g theme_nerd_fonts yes
